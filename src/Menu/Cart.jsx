@@ -54,9 +54,11 @@ const sumConfirm = ()=>{
   if(!window.confirm('주문하시는 매장은 '+ $("select[name=store] option:selected").text() +'이며, 총 결제 금액은 '+ sum +'원 맞으십니까?')){
     alert("결제 취소");
   }else if(!window.confirm == false){
-  
     $('tr#list').remove();
-    setSum(0)
+    setSum(sum - sum);
+    $('.total').remove()
+    $('.b_cimg').remove();
+    $('.b_textTotal').remove();
       alert("결제 완료");
   }
 }
