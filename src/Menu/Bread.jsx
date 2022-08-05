@@ -80,7 +80,7 @@ const Bread = () => {
                  
                   <li className="w_li2">매장 상황에 따라 판매하지 않을 수도 있습니다.</li>
                   <li className='b_icon'>
-                  <i class="fa-regular fa-heart" onClick={()=>plusLike(i)} style={{color:"#fa6464", cursor:"pointer"}}><span style={{color:"black",display:"inline-block", paddingLeft:"5px"}}>{likeArr[i]}</span></i>
+                  <i class="fa-regular fa-heart" onClick={()=>plusLike(i)} style={{color:"#fa6464", cursor:"pointer"}}><span style={{color:"black",display:"inline-block", paddingLeft:"5px"}}></span></i>
                     <i class="fa-solid fa-cart-arrow-down" id={breadList.bread[i].id} style={{color:"skyblue", cursor:"pointer"}} onClick={()=>{addCart(breadList.bread[i].id)}}></i>
                   </li>
                 </ul>
