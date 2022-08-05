@@ -48,7 +48,16 @@ const plusLike = (i) => {
     element[i].className = 'fa-regular fa-heart'; //클래스 이름 수정
   }  
 
+  if(_likeArr[i] == 1){   // 배열에서 인덱스 i인 제품의 좋아요의 값이 296이니까 +1
+    _likeArr[i] += 1;    
+    setLikeArr(_likeArr);
+    element[i].className = 'fa-solid fa-heart'; //클래스 이름 수정
 
+  }else{                  // 배열에서 인덱스 i인 제품의 좋아요의 값이 297이니까 -1
+    _likeArr[i] -= 1;
+    setLikeArr(_likeArr);   
+    element[i].className = 'fa-regular fa-heart'; //클래스 이름 수정
+  }  
 
 }
 
