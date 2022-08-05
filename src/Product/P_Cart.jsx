@@ -123,21 +123,17 @@ const P_Cart = ({modal, setModal, addList, setAddList, tt}) => {
 
 
   //상품 클릭시 장바구니에 리스트업
-
-
+  const [aa, setaa] = useState([]);
+  const [bb, setbb] = useState([]);
   const [cc, setcc] = useState([]);
   const [dd, setdd] = useState([]);
 
-<<<<<<< HEAD
   let arr = [];
   let arr2 = [];
   let arr3 = [];
   let arr4 = [];
 
   if(addList.modal === aa){
-=======
-  // if(mug.modal === aa){
->>>>>>> c37c733121ed7b5ed0ab964b0acf4ed2420d806b
 
   }else{
     arr.push(addList.title);
@@ -159,13 +155,9 @@ const P_Cart = ({modal, setModal, addList, setAddList, tt}) => {
 
   const [sum, setSum] = useState(0);
 
-<<<<<<< HEAD
   const [number, setNumber] = useState(1);
   const [cost, setCost] = useState(0);
   const [costTest, setCostTest] = useState(Array.from((v, i) => i));
-=======
-  const [cost, setCost] = useState([]);
->>>>>>> c37c733121ed7b5ed0ab964b0acf4ed2420d806b
   const [wishTab, setWishTab] = useState(Array.from({length: 9}, () => 1));
 
   console.log('cost: ', cost);
@@ -215,15 +207,6 @@ const P_Cart = ({modal, setModal, addList, setAddList, tt}) => {
   }
     //버튼 클릭시 아이템 삭제
  
-<<<<<<< HEAD
-
-=======
-    const remove = (r)=>{
-      let arr = [...addList];
-      arr.splice(r,1, '');
-      cost.splice(r,1);
-     
->>>>>>> c37c733121ed7b5ed0ab964b0acf4ed2420d806b
 
       // console.log('ll',ll)
     const remove = (r,index)=>{
@@ -233,7 +216,6 @@ const P_Cart = ({modal, setModal, addList, setAddList, tt}) => {
       arr.splice(r,1);
       arr2.splice(r,1);
       setAddList(arr);
-<<<<<<< HEAD
       setWishTab(arr2);
       
 
@@ -245,10 +227,6 @@ const P_Cart = ({modal, setModal, addList, setAddList, tt}) => {
       // bb[i].filter(remove);
       // console.log('del addList: ', addList );    
       // console.log('del i: ', i);
-=======
-      setSum(cost);
-    
->>>>>>> c37c733121ed7b5ed0ab964b0acf4ed2420d806b
     }
  
 

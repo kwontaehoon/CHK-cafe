@@ -7,30 +7,27 @@ import Cup from './Cup';
 import Acc from './Acc';
 import PackTea from './PackTea';
 
-<<<<<<< HEAD
-const StyledLink = styled(Link)` //스타일 컴포넌트로 라우터
-  display: flex;
-   width: 60%;
-   padding: 0;
-   font-size: 20px;
-   span{
-    display: flex;
-   width: 60%;
-   padding: 0;
-   font-size: 20px;
-   }
-   p{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content:center;
-    margin-top:20px;
-}
-`
+
+// const StyledLink = styled(Link)` //스타일 컴포넌트로 라우터
+//   display: flex;
+//    width: 60%;
+//    padding: 0;
+//    font-size: 20px;
+//    span{
+//     display: flex;
+//    width: 60%;
+//    padding: 0;
+//    font-size: 20px;
+//    }
+//    p{
+//     width: 100%;
+//     height: 100%;
+//     display: flex;
+//     justify-content:center;
+//     margin-top:20px;
+// }
+// `
 const Brrr = styled.span` // 클릭표시 애니메이션 효과
-=======
-const Brrr = styled.span`
->>>>>>> c37c733121ed7b5ed0ab964b0acf4ed2420d806b
     display:block;
     font-size:15px;
     width:10px;
@@ -75,7 +72,6 @@ let [subTop2, setSubTop2] = useState(false);
 let [modal, setModal] = useState(false);
 const [addList, setAddList] = useState([]);
 
-<<<<<<< HEAD
 const [tt, setTt] = useState(true);
 
 const add = () => {
@@ -84,8 +80,6 @@ const add = () => {
 
 
 
-=======
->>>>>>> c37c733121ed7b5ed0ab964b0acf4ed2420d806b
 
 const main = (props) => {
   setMenu(true);

@@ -7,11 +7,12 @@ body {
   font-size: 16px;
   font-weight: 600;
 }
-
+/* classname id 넣어서 다시 해주세요 본인것만 있는거아닌뎅...*/
+/* 
 input:focus {outline:none;}
 input{
   width: 400px;
-}
+} */
 
 div{
   color: black;
