@@ -5,8 +5,6 @@ import axios from 'axios'
 // https://dev-seolleung2.netlify.app/Final%20Project/FinalProject-KakaoLogin/
 const Auth2 = () => {
 
-
-  
     const REST_API_KEY ="1ab930298baa3406dee898231822f512";
     const REDIRECT_URI = "	http://localhost:3000";
     const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
@@ -27,8 +25,6 @@ const Auth2 = () => {
       }
       a();
     })
-    console.log('token: ', token);
-    console.log('access token: ', token.access_token);
 
     if(token !== null){
       localStorage.setItem('token', token.access_token);
