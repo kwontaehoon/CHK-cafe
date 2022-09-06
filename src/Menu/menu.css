@@ -232,9 +232,12 @@ tr:first-child:not(.cartName){
     width: 100%;
     text-align: center;
 }
-
+#list td{
+    width: 100px;
+}
 .cartNames td{
     padding: 30px ;
+    width: 100px;
 }
 .b_cartBoxs tr:not(.cartName){
     line-height: 200px;

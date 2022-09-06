@@ -13,7 +13,7 @@ const Coffee = () =>{
   
 const [dd, setDd] = useState([]);
 
-const [likeArr, setLikeArr] = useState(Array.from({length: 14})); // likeArr 배열 선언 ( 배열에 들어있는 변수들의 초기값은 296 으로 )
+const [likeArr, setLikeArr] = useState(Array.from({length: 14}, () => 296)); // likeArr 배열 선언 ( 배열에 들어있는 변수들의 초기값은 296 으로 )
 
 const [cartList, setCartList] = useState({price: 0});
 const [display2, setDisplay2] = useState(false);
@@ -33,21 +33,31 @@ const addCart = (a)=> {
 }
 
 const plusLike = (i) => {
-//   let _likeArr = [...likeArr];    //[296, 296, 296, 296, 296, 296...]
-  let element = document.getElementsByClassName("fa-heart");
+  let _likeArr = [...likeArr];    //[296, 296, 296, 296, 296, 296...]
+  let element = document.getElementsByClassName('fa-heart');
+  
 
-//   if(_likeArr[i] == 296){   // 배열에서 인덱스 i인 제품의 좋아요의 값이 296이니까 +1
-//     _likeArr[i] += 1;    
-//     setLikeArr(_likeArr);
-//     element[i].className = 'fa-solid fa-heart'; //클래스 이름 수정
+  if(_likeArr[i] == 296){   // 배열에서 인덱스 i인 제품의 좋아요의 값이 296이니까 +1
+    _likeArr[i] += 1;    
+    setLikeArr(_likeArr);
+    element[i].className = 'fa-solid fa-heart'; //클래스 이름 수정
 
-//   }else{                  // 배열에서 인덱스 i인 제품의 좋아요의 값이 297이니까 -1
-//     _likeArr[i] -= 1;
-//     setLikeArr(_likeArr);   
-//     element[i].className = 'fa-regular fa-heart'; //클래스 이름 수정
-//   }  
+  }else{                  // 배열에서 인덱스 i인 제품의 좋아요의 값이 297이니까 -1
+    _likeArr[i] -= 1;
+    setLikeArr(_likeArr);   
+    element[i].className = 'fa-regular fa-heart'; //클래스 이름 수정
+  }  
 
-  element[i].className = 'fa-solid fa-heart';
+  if(_likeArr[i] == 1){   // 배열에서 인덱스 i인 제품의 좋아요의 값이 296이니까 +1
+    _likeArr[i] += 1;    
+    setLikeArr(_likeArr);
+    element[i].className = 'fa-solid fa-heart'; //클래스 이름 수정
+
+  }else{                  // 배열에서 인덱스 i인 제품의 좋아요의 값이 297이니까 -1
+    _likeArr[i] -= 1;
+    setLikeArr(_likeArr);   
+    element[i].className = 'fa-regular fa-heart'; //클래스 이름 수정
+  }  
 
 }
 
@@ -88,7 +98,7 @@ const show =(listVal)=>{
                
                 <li className="w_li2">매장 상황에 따라 판매하지 않을 수도 있습니다.</li>
                 <li className='b_icon'>
-                  <i class="fa-regular fa-heart" onClick={()=>plusLike(i)} style={{color:"#fa6464", cursor:"pointer"}}><span style={{color:"black",display:"inline-block", paddingLeft:"5px"}}>{likeArr[i]}</span></i>
+                  <i class="fa-regular fa-heart" onClick={()=>plusLike(i)} style={{color:"#fa6464", cursor:"pointer"}}><span style={{color:"black",display:"inline-block", paddingLeft:"5px"}}></span></i>
                   <i class="fa-solid fa-cart-arrow-down" id={coffeeList.coffeeList[i].id} style={{color:"skyblue", cursor:"pointer"}} onClick={()=>{addCart(coffeeList.coffeeList[i].id)}}></i>
                 </li>
               </ul>

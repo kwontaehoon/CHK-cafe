@@ -5,13 +5,12 @@ import PackCapsuleList from './ProList.json';
 import * as Styled from "./Style";
 
 
-const PackTea = ({subTop2, setSubTop2, addList, setAddList}) => {
+const PackTea = ({subTop2, setSubTop2, addList, setAddList,add}) => {
 
   const [test, setTest] = useState(1);
+ 
 
-  const add = () => {
-  }
-  const subTopClose2 = () =>{
+  const subTopClose2 = (props) =>{
     setSubTop2(false);
   }
 

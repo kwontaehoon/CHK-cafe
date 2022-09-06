@@ -92,7 +92,7 @@ for(let i = 0;i< a.length;i++){
         </tr>
           {/* 반복구간 */}
         </table>
-        <p className="text-center mt-3 border-top border-dark pt-3">Total : {total} </p>
+        <p className="text-center mt-3 border-top border-dark pt-3 total">Total : {total} </p>
         <p className='btn btn-primary b_link' onClick={show}>바로 구매하기</p>
       
         </div> 

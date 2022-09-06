@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import React, {useEffect} from 'react'
+=======
+import React, {useState, useEffect} from 'react'
+// import { useCookies } from "react-cookie";
+>>>>>>> c6db6cf634ef874e9e74c1ae743c935494ccd5a5
 
 
 const Auth = () => {

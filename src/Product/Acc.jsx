@@ -4,15 +4,11 @@ import CardList from './ProList.json';
 import EtcList from './ProList.json';
 import * as Styled from "./Style";
 
-const Acc = ({subTop1, setSubTop1, addList, setAddList}) => {
+const Acc = ({subTop1, setSubTop1, addList, setAddList, add}) => {
 
   const [test, setTest] = useState(1);
-  let [subList, setSubList] = useState(false);
-  let [tt, setTt] = useState(true);
-  const add = () => {
-    setSubList(true);
-    setTt(false);
-  }
+  let [modal, setModal] = useState(false);
+ 
   const subTopClose1 = (props) =>{
     setSubTop1(false);
   }

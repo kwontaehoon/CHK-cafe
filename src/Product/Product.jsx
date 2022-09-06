@@ -7,7 +7,27 @@ import Cup from './Cup';
 import Acc from './Acc';
 import PackTea from './PackTea';
 
-const Brrr = styled.span`
+
+// const StyledLink = styled(Link)` //스타일 컴포넌트로 라우터
+//   display: flex;
+//    width: 60%;
+//    padding: 0;
+//    font-size: 20px;
+//    span{
+//     display: flex;
+//    width: 60%;
+//    padding: 0;
+//    font-size: 20px;
+//    }
+//    p{
+//     width: 100%;
+//     height: 100%;
+//     display: flex;
+//     justify-content:center;
+//     margin-top:20px;
+// }
+// `
+const Brrr = styled.span` // 클릭표시 애니메이션 효과
     display:block;
     font-size:15px;
     width:10px;
@@ -51,6 +71,14 @@ let [subTop1, setSubTop1] = useState(false);
 let [subTop2, setSubTop2] = useState(false);
 let [modal, setModal] = useState(false);
 const [addList, setAddList] = useState([]);
+
+const [tt, setTt] = useState(true);
+
+const add = () => {
+  setTt(false);
+}
+
+
 
 
 const main = (props) => {
@@ -119,20 +147,20 @@ const packClick = (props) => {
     
       <PageWrap>
       <div className='111' style={{display: menuCup? "block" : "none"}}>
-        <Cup  subTop={subTop} setSubTop={setSubTop}  addList={addList} setAddList={setAddList}  />
+        <Cup  subTop={subTop} setSubTop={setSubTop}  addList={addList} setAddList={setAddList} add={add} />
         </div>
         <div className='222' style={{display: menuAcc? "block" : "none"}}>
-        <Acc subTop={subTop1} setSubTop={setSubTop1} addList={addList} setAddList={setAddList} />
+        <Acc subTop1={subTop1} setSubTop1={setSubTop1} addList={addList} setAddList={setAddList} add={add} />
         </div>
         <div className='333' style={{display: menuPack? "block" : "none"}}>
-        <PackTea subTop={subTop2} setSubTop={setSubTop2} addList={addList} setAddList={setAddList} />
+        <PackTea subTop2={subTop2} setSubTop2={setSubTop2} addList={addList} setAddList={setAddList} add={add} />
         </div>
         <div className='444' style={{display: menu? "block" : "none"}}>
-        <ProductMain menu={menu} setMenu={setMenu}  menu1={menu1} setMenu1={setMenu1} cupClick={cupClick} />
+        <ProductMain menu={menu} setMenu={setMenu}  menu1={menu1} setMenu1={setMenu1} cupClick={cupClick} add={add} />
         </div>
         
         </PageWrap>
-        <P_Cart modal={modal} addList={addList}/>
+        <P_Cart modal={modal} addList={addList} setAddList={setAddList} tt={tt} add={add}/>
   
 </>
   )
