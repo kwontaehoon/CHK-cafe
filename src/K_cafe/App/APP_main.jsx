@@ -151,6 +151,9 @@ const MainBox3 = styled.div`
   height: 300px;
   background-color: skyblue;
   margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
 `
 const InfoBox1 = styled.div`
   width: 100%;
@@ -252,7 +255,7 @@ const APP_main = () => {
           <InfoBox2 active={active}>
           <Row>
             <Col md="2" xs="4">
-              <Box1 onClick={test}  data-aos="fade-up" data-aos-duration="500"></Box1>
+              <Box1 onClick={test} data-aos="fade-up" data-aos-duration="500"></Box1>
             </Col>
             <Col md="2" xs="4">
               <Box1 onClick={test} data-aos="fade-up" data-aos-duration="500"></Box1>

@@ -230,24 +230,24 @@ const select_button = (s) => { // bronze, sliver, gold 버튼
                 <InfoBox>커피 무료 사이즈업(1회)<Water><WaterInB /></Water></InfoBox>
                 <InfoBox>멤버십 전용 이벤트 참여 기회 부여<Water><WaterInB /></Water></InfoBox>
                 <InfoBox>10% 할인 쿠폰 제공(1회)<Water><WaterInB /></Water></InfoBox>
-                <InfoBox></InfoBox>
-                <InfoBox></InfoBox>
+                <InfoBox>-</InfoBox>
+                <InfoBox>-</InfoBox>
               </Info1>
               <Info2 style={{display: select[1]}}>
               <InfoBox>Silver 멤버쉽 카드 제공<Water><WaterInS /></Water></InfoBox>
               <InfoBox>커피/음료 무료 쿠폰 제공(1회)<Water><WaterInS /></Water></InfoBox>
                 <InfoBox>CHK MUG 1개 제공<Water><WaterInS /></Water></InfoBox>
                 <InfoBox>20% 할인 쿠폰 제공<Water><WaterInS /></Water></InfoBox>
-                <InfoBox></InfoBox>
-                <InfoBox></InfoBox>
+                <InfoBox>-</InfoBox>
+                <InfoBox>-</InfoBox>
               </Info2>
               <Info3 style={{display: select[2]}}>
               <InfoBox>Gold 멤버쉽 카드 제공<Water><WaterInG /></Water></InfoBox>
               <InfoBox>생일 축하케이크 제공(매년 1회)<Water><WaterInG /></Water></InfoBox>
                 <InfoBox>멤버십 감사 쿠폰 제공<Water><WaterInG /></Water></InfoBox>
                 <InfoBox>CHK GOODS 1개 제공<Water><WaterInG /></Water></InfoBox>
-                <InfoBox></InfoBox>
-                <InfoBox></InfoBox>
+                <InfoBox>-</InfoBox>
+                <InfoBox>-</InfoBox>
               </Info3>
             </Info>
           </SelectBox>
@@ -265,10 +265,6 @@ const select_button = (s) => { // bronze, sliver, gold 버튼
         <Main4Content>- 스탬프 유효기간은 스탬프 별 1년이며, 쿠폰 유효기간은 발행일 기준 1개월입니다.</Main4Content>
         <Main4Content>- 스탬프 유효기간은 스탬프 별 1년이며, 쿠폰 유효기간은 발행일 기준 1개월입니다.</Main4Content>
       </MainBox4>
-
-
-       
-        
       </Main>
     </Container>
   )

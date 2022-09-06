@@ -77,3 +77,9 @@ app.use('/api/test', upload.single('image'), require('./routes/testRouter'));
 app.use('/api/comment', require('./routes/commentRouter'));
 app.use('/api/notice', require('./routes/noticeRouter'));
 app.use('/api/kakao', require('./routes/kakaoRouter'));
+app.use('/api/kakao2', require('./routes/kakao2Router'));
+
+// app.get('/api/test2', (req, res) => {
+//     console.log('aa');
+//     res.send(200, {"rows": 123});  
+// })

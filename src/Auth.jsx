@@ -1,15 +1,13 @@
-import React, {useState, useEffect} from 'react'
-import { useCookies } from "react-cookie";
+import React, {useEffect} from 'react'
 
 
 const Auth = () => {
 
-
-    const [info, setInfo] = useState([]);
-
     const {Kakao} = window;
 
     const code = new URL(window.location.href).searchParams.get("code");
+
+    console.log('code: ', code);
 
     try {
         if (Kakao) {
@@ -33,8 +31,6 @@ const Auth = () => {
                     // document.cookie = `key=${nickname}`;
                     localStorage.setItem('code', nickname);
                     localStorage.setItem('token', response.access_token);
-                    let member = [nickname, profile];
-                    setInfo(member);
                     window.location.href = `/api/kakao?id=${nickname}`;
                 }
             });
@@ -48,42 +44,13 @@ const Auth = () => {
 
 console.log('token: ', Kakao.Auth.getAccessToken());
 
-function kakaoLogout() {
-    if (window.Kakao.Auth.getAccessToken()) {
-        window.Kakao.API.request({
-          url: '/v1/user/unlink',
-          success: function (response) {
-            console.log(response);
-          },
-          fail: function (error) {
-            console.log(error);
-          },
-        });
-        alert('로그아웃이 완료되었습니다.');
-        window.location.href='/'
-      }
 
-
-    // Kakao.API.request({
-    //     url: '/v1/user/unlink',
-    //     success: function(response){
-    //         console.log(response);
-    //     }
-    // })
-
-    // Kakao.Auth.logout(function(response) {
-    //     removeCookie('key', {path: '/'});
-    //     removeCookie('rememberText');
-    //     removeCookie('webid',  {domain: 'http://.kakao.com'});
-    //     window.location.href='/api/logout?kakao=true'
-    // });
-};
 
   return (
     <>
         {/* <div>{code}</div> */}
-        <div>{info[0]}</div>
-        <button onClick={kakaoLogout}>로그아웃</button>
+        {/* <div>{info[0]}</div>
+        <button onClick={kakaoLogout}>로그아웃</button> */}
     </>
   )
 }

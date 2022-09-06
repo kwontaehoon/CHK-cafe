@@ -75,23 +75,23 @@ const Box3 = () => {
         <Row>
         <Col md="3" xs="6">
             <Dev_box active={active1} onClick={()=>slide(0)}>
-                <Profile>Developer : 권~태~훈~</Profile>
+                <Profile>Developer : 권 태 훈</Profile>
             </Dev_box>
         </Col>
         <Col md="3" xs="6">
             <Dev_box active={active1} onClick={()=>slide(1)}>
-            <Profile>Developer : 최◆보◆은</Profile>
+            <Profile>Developer : 최 보 은</Profile>
             </Dev_box>
             
         </Col>
         <Col md="3" xs="6">
             <Dev_box active={active1} onClick={()=>slide(2)}>
-            <Profile>Developer : 홍★지★우</Profile>
+            <Profile>Developer : 홍 지 우</Profile>
             </Dev_box>
         </Col>
         <Col md="3" xs="6">
             <Dev_box active={active1} onClick={()=>slide(3)}>
-            <Profile>Developer : 임♪리♪비</Profile>
+            <Profile>Developer : 임 리 비</Profile>
             </Dev_box>
         </Col>
         </Row>

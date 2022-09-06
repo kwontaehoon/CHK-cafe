@@ -64,6 +64,8 @@ const Res = styled.div`
   animation-fill-mode: forwards;
   animation-duration: 1s;
   display: none;
+  align-items: center;
+  justify-content: center;
 `
 const Line = styled.div`
   border-top: 1px solid #ddd;
@@ -97,15 +99,15 @@ const FAQ = () => {
       <Main>
         <Box1>자주하는 질문 1.</Box1>
         <Bar1><ArrowBox arrow2={arrow2[0]}><i className="fa-solid fa-angle-down" onClick={()=>slide(0)}></i></ArrowBox ></Bar1>
-        <Res style={{display: arrow[0] ? "flex" : "none"}}>대답1</Res>
+        <Res style={{display: arrow[0] ? "flex" : "none"}}>자주하는 질문 1에 대한 대답</Res>
 
         <Box1>자주하는 질문 2.</Box1>
         <Bar1><ArrowBox arrow2={arrow2[1]}><i className="fa-solid fa-angle-down" onClick={()=>slide(1)}></i></ArrowBox ></Bar1>
-        <Res style={{display: arrow[1] ? "flex" : "none"}}>대답2</Res>
+        <Res style={{display: arrow[1] ? "flex" : "none"}}>자주하는 질문 2에 대한 대답</Res>
         
         <Box1>자주하는 질문 3.</Box1>
         <Bar1><ArrowBox arrow2={arrow2[2]}><i className="fa-solid fa-angle-down" onClick={()=>slide(2)}></i></ArrowBox ></Bar1>
-        <Res style={{display: arrow[2] ? "flex" : "none"}}>대답3</Res>
+        <Res style={{display: arrow[2] ? "flex" : "none"}}>자주하는 질문 3에 대한 대답</Res>
         <Line></Line>
         <Footer></Footer>
       </Main>

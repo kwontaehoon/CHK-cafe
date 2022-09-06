@@ -27,7 +27,7 @@ import Login from './Login/Login_page'
 import SignUp from './Login/SignUp'
 import P_Pay from './Product/P_Pay'
 import './app.css'
-import Auth from './Auth'
+import Auth from './Auth2'
 
 
 
