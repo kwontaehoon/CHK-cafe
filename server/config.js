@@ -1,7 +1,7 @@
 const fs = require('fs');
 const mysql = require('mysql');
 
-const data = fs.readFileSync('./aws.json');
+const data = fs.readFileSync('./database.json');
 const conf = JSON.parse(data);
 
 

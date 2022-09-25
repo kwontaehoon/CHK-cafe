@@ -8,7 +8,6 @@ import tt  from './base.png'
 
 const Container = styled.div`
   width: 80%;
-  height: 1000px;
   margin: auto;
   background-color: white;
   position: relative;
@@ -33,8 +32,8 @@ const Main = styled.div`
   display: flex;
 `
 const Main_left = styled.div`
-  height: 1000px;
   border: 1px solid black;
+  height: 800px;
   padding: 10px;
   overflow: scroll;
 
@@ -64,8 +63,8 @@ const DD = styled.div`
   font-size: 14px;
 `
 const Main_right = styled.div`
-  height: 1000px;
   border: 1px solid black;
+  height: 800px;
   padding: 10px;
   overflow: scroll;
 `
@@ -163,8 +162,6 @@ const View2 = () => {
     console.log('view2 useEffect');
     async function a(){
       const response = await axios.post(`/api/comment/${id}`);
-      console.log('데이터받아왔니??');
-      console.log(response.data.rows);
       setComment_info(response.data.rows.reverse());
     }
 
@@ -185,12 +182,6 @@ const View2 = () => {
   const [comment_info, setComment_info] = useState([]); // 댓글 테이블 정보
   const [revise, setRevise] = useState('none'); // 수정 | 삭제 유무
   const [member_info, setMember_info] = useState([]);
-  
-  console.log('view2 comment: ', comment_info);
-  console.log('id: ', id);
-  console.log('view2 comment 길이: ', comment_info.length);
-  console.log('info: ', info);
-  console.log('member info: ', member_info);
 
   const List = () => {
     const arr2 = [];
@@ -262,20 +253,6 @@ const View2 = () => {
         <div key={i.id}>- {i.content}</div>
       )
       count++;
-      }else break;
-    }
-    return arr;
-  }
-
-  const List4 = () => { // 최신 댓글
-    let arr= [];
-    let count = 0;
-    for(let i of comment_info){
-      if(count !== 5){
-        arr.push(
-          <div key={i.id}>- {i.content}</div>
-        )
-        count++;
       }else break;
     }
     return arr;

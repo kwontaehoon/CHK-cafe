@@ -1,4 +1,5 @@
 const connection = require('../config');
+const axios = require('axios');
 
 const testCtrl = {
     getInfo: async(req, res)=>{

@@ -110,10 +110,6 @@ const Notice = () => {
   
     const [comment_info, setComment_info] = useState([]); // 댓글 테이블 정보
     const [notice_info, setNotice_info] = useState([]);
-    
-    console.log('view2 comment: ', comment_info);
-    console.log('id: ', id);
-    console.log('notice info: ', notice_info);
   
     const List = () => {
       const arr2 = [];

@@ -47,6 +47,7 @@ const boardCtrl = {
         }
     },
     getInfo: async(req, res)=>{
+        console.log('board 입니다.');
         if(req.query.delete !== undefined){ // 삭제 눌렀을 때
             const id = req.query.id;
             const sql = `DELETE FROM board WHERE id = ${id};`+

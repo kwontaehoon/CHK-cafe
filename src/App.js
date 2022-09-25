@@ -26,10 +26,7 @@ import Login from './Login/Login_page'
 import SignUp from './Login/SignUp'
 import P_Pay from './Product/P_Pay'
 import './app.css'
-import Auth from './Auth2'
-
-
-
+import Auth from './Auth'
 
 const App = () => {
   

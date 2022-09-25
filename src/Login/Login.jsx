@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import axios from 'axios'
 
 
 const Container = styled.div`
-    height: 800px;
 `
 const Box1 = styled.div`
     border: 2px solid black;
     margin: auto;
     width: 700px;
     height: 500px;
-    margin-top: 150px;
+    margin-top: 50px;
 `
 const Box2 = styled.div`
     border: 1px solid black;
@@ -58,11 +58,7 @@ const Login = () => {
     const color1 = () => {
         setMaintain(!maintain);
     }
-    const test = () => {
-        var str = document.getElementById('id');
-        if(str.value.length !== 0 ){ }
-        
-    }
+
   return (
     <Container>
         <Box1>
@@ -73,7 +69,7 @@ const Login = () => {
                 <Password><div style={{width: "80px"}}>비밀번호: </div><input type="password" name="password" placeholder='비밀번호'></input></Password>
                 <div style={{color: "gray", cursor: "pointer"}} onClick={color1}><i className="fa-solid fa-circle-check" style={{color: maintain ? "black" : "gray"}}></i>로그인 상태 유지</div>
                 <Result>
-                    <Login2 onClick={test}><input type="submit" value="로그인" style={{backgroundColor: "yellow", width: "100%", height: "100%", cursor: "pointer",  borderRadius: "10px"}}></input></Login2>
+                    <Login2><input type="submit" value="로그인" style={{backgroundColor: "yellow", width: "100%", height: "100%", cursor: "pointer",  borderRadius: "10px"}}></input></Login2>
                     <Kakao href={KAKAO_AUTH_URL}><img src='/image/K_image/kakao_login.jpg' width="313px"></img></Kakao>
                 </Result>
                 <SignUp><Link to={"/signup"}><button>회원가입</button></Link></SignUp>

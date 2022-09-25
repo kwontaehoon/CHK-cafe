@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import React, {useEffect} from 'react'
-=======
 import React, {useState, useEffect} from 'react'
 // import { useCookies } from "react-cookie";
->>>>>>> c6db6cf634ef874e9e74c1ae743c935494ccd5a5
-
 
 const Auth = () => {
 
@@ -21,7 +16,6 @@ const Auth = () => {
     } catch(e) {}; // 한번만 실행되야해서 그리고 밑에 코드에 kakao.init 필요해서 try catch문 사용
 
     useEffect(()=> {
-
     Kakao.Auth.login({
         scope: 'profile_nickname, profile_image', // 동의항목 페이지에 있는 개인정보 보호 테이블의 활성화된 ID값을 넣습니다.
         success: function(response) {
@@ -34,9 +28,11 @@ const Auth = () => {
                     const nickname = kakao_account.profile.nickname;
                     const profile = kakao_account.profile.profile_image_url;
                     // document.cookie = `key=${nickname}`;
+                    localStorage.setItem('profile', profile);
                     localStorage.setItem('code', nickname);
                     localStorage.setItem('token', response.access_token);
-                    window.location.href = `/api/kakao?id=${nickname}`;
+                    alert('카카오 로그인 완료!!');
+                    window.location.href = `/`;
                 }
             });
             // window.location.href='/ex/kakao_login.html' //리다이렉트 되는 코드

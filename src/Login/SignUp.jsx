@@ -6,7 +6,6 @@ import DaumPostCode from 'react-daum-postcode';
 
 const Container = styled.div`
     width: 80%;
-    height: 600px;
     margin: auto;
     border: 1px solid black;
     margin-top: 50px;
@@ -21,7 +20,7 @@ const Header = styled.div`
 `
 const Main = styled.div`
     padding: 30px;
-    height: 500px;
+    height: 430px;
     position: relative;
 `
 const Id = styled.div`
@@ -87,7 +86,6 @@ const Top = styled.div`
     }
 `
 const Bottom = styled.div`
-    height: 350px;
 `
 
 const SignUp = () => {
@@ -110,8 +108,6 @@ const SignUp = () => {
     const [daum_display, setDaum_display] = useState(false); // daum 모달 display
     const [daum_address, setDaum_address] = useState('');
     const [daum_jibun, setDaum_jibun] = useState('');
-
-    console.log('member: ', member_info);
 
     const overlap = () => {
         let count = 0;

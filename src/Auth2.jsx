@@ -19,16 +19,16 @@ const Auth2 = () => {
     useEffect(()=> {
       async function a(){
         console.log('a실행');
-        const response = await axios.get(`/api/kakao2?code=${code}`);
+        const response = await axios.get(`/api/test?code=${code}`);
         console.log('response: ', response.data.token);
         setToken(response.data.token);
       }
       a();
     })
 
-    if(token !== null){
-      localStorage.setItem('token', token.access_token);
-    }
+    // if(token !== null){
+    //   localStorage.setItem('token', token.access_token);
+    // }
     
   return (
     <div>Auth2</div>

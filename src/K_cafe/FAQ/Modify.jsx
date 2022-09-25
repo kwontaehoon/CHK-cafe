@@ -57,7 +57,6 @@ const Modify = () => {
   }, []);
 
   const [modify_info, setModify_info] = useState([]);
-  console.log('modify info: ',modify_info);
 
   const List = () => {
     let arr = [];

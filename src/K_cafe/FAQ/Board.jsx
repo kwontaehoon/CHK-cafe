@@ -173,6 +173,7 @@ const CurrentBox = styled.div`
 const Board = () => {
 
   const [info, setInfo] = useState([]); // 게시판 글
+  console.log('info: ', info);
   const [info2, setInfo2] = useState([]); // 한 페이지에 글 15개씩(서버에서 필터하지않고 프론트에서 필터)
   const [comment_info, setComment_info] = useState([]);
   const [infolength, setInfolength] = useState(info.length); // 게시판 길이
@@ -184,16 +185,8 @@ const Board = () => {
   const [member_info, setMember_info] = useState([]); // 멤버 정보
 
   const localstorage = localStorage.getItem('token');
-  console.log(localstorage !== undefined);
-  console.log(localstorage === null);
   
-  console.log('info: ', info);
-  console.log('info2: ', info2);
-  console.log('comment info: ', comment_info);
-  console.log('notice info', notice_info);
-  console.log('member info: ', member_info);
   let { id } = useParams();
-  console.log('쿼리스트링: ', id);
   // 쿼리스트링 page
 
 
@@ -201,8 +194,6 @@ const Board = () => {
     console.log('useEffect');
     async function a(){
       const response = await axios.get('/api/board/'+id);
-      console.log('데이터받아왔니??');
-      console.log(response.data);
       setInfo(response.data.rows.reverse());
 
       setInfolength(response.data.length);
