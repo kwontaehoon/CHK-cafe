@@ -64,7 +64,7 @@ const Login = () => {
         <Box1>
             <h2 style={{textAlign: "center"}}>로그인</h2>
             <Box2>
-                <form name= 'loginform' action='/api/login' method='get'>
+                <form name= 'loginform' action='/api/login' method='post'>
                 <Id><div style={{width: "80px"}}>아이디: </div><input type="text" id="id" name="id" placeholder='아이디'></input></Id>
                 <Password><div style={{width: "80px"}}>비밀번호: </div><input type="password" name="password" placeholder='비밀번호'></input></Password>
                 <div style={{color: "gray", cursor: "pointer"}} onClick={color1}><i className="fa-solid fa-circle-check" style={{color: maintain ? "black" : "gray"}}></i>로그인 상태 유지</div>
