@@ -16,9 +16,9 @@ const Container = styled.div`
   top: 0px;
 `
 const Header = styled.div`
-  border: 1px solid black;
   height: 50px;
   display: flex;
+  border: 1px solid black;
 `
 const BB = styled.div`
   flex: 0 0 80%;
@@ -32,7 +32,7 @@ const Score = styled.div`
   border-radius: 5px;
   margin-right: 3px;
   line-height: 22px;
-  border: 1px solid #grey;
+  border: 1px solid grey;
 `
 const Write = styled.div`
   flex: 0 0 20%;

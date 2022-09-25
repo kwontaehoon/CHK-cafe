@@ -3,7 +3,6 @@ import Main from './Main/Main_page'
 import Topnav from './K_cafe/Topbar2'
 import Coffee from './Menu/Coffee'
 import Membership from './K_cafe/Member/Member_main'
-import MembershipApp from './K_cafe/App/App_main'
 import MembershipFaq from './K_cafe/FAQ/FAQ_main'
 import Board from './K_cafe/FAQ/Board'
 import FAQ from './K_cafe/FAQ/FAQ'
@@ -48,7 +47,6 @@ const App = () => {
         <Route path="/juice" element={<Juice/>} />
         <Route path="/mini" element={<Mini/>}/>
         <Route path='/membership' element={<Membership />}/>
-        <Route path='/membership/app' element={<MembershipApp />}/>
         <Route path='/membership/faq' element={<MembershipFaq />}/>
         <Route path='/membership/faq/board/:id' element={<Board />}/>
         <Route path='/membership/faq/faq' element={<FAQ />}/>

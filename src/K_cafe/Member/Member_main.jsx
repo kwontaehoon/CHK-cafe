@@ -44,7 +44,7 @@ const Main = styled.div`
   margin: auto;
 `
 const MainBox1 = styled.div`
-  display flex;
+  display: flex;
   justify-content: space-around;
   align-items: center;
 `
