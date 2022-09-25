@@ -159,17 +159,10 @@ const P_Cart = ({modal, setModal, addList, setAddList, tt}) => {
   const [cost, setCost] = useState(0);
   const [costTest, setCostTest] = useState(Array.from((v, i) => i));
   const [wishTab, setWishTab] = useState(Array.from({length: 9}, () => 1));
-
-  console.log('cost: ', cost);
-  console.log('wishtap: ', wishTab);
-  console.log('sum: ', sum);
  
-  
   useEffect(()=> {
-    console.log('useEffect');
 
     addList.map(x=>{
-      console.log('x: ', x.Price);
       setSum(sum + x.Price);
     })
     // cost.push(addList.Price);
@@ -208,34 +201,16 @@ const P_Cart = ({modal, setModal, addList, setAddList, tt}) => {
     //버튼 클릭시 아이템 삭제
  
 
-      // console.log('ll',ll)
     const remove = (r,index)=>{
-      console.log('r: ', r);
       let arr = [...addList];
       let arr2 = [...wishTab];
       arr.splice(r,1);
       arr2.splice(r,1);
       setAddList(arr);
       setWishTab(arr2);
-      
 
-      // setSum(sum - costTest[i]);
-      // // test2[r] = test2[r]-aa[i];
-      // setTest(aa.splice(aa[i], i));
-      // setTest(bb.splice(bb[i], i));
-      // aa[i].filter(remove);
-      // bb[i].filter(remove);
-      // console.log('del addList: ', addList );    
-      // console.log('del i: ', i);
     }
  
-
- 
-
-
-
-
-
  const List1 = () => {
   let arr = [];
   addList.map((i, index)=>{

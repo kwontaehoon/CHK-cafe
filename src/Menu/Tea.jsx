@@ -19,16 +19,13 @@ const Tea = () =>{
 
 const addCart = (a)=> {
   let arr = [];
-  console.log('a', a); 
   // alert("장바구니에 추가되었습니다.");
   for(let i = 0;i< beverage.Beverage.length;i++){
     if(a === beverage.Beverage[i].id){
       arr.push(beverage.Beverage[i]);
     }
   }
-  console.log('arr: ', arr);
   setCartList(...arr);
-  console.log('cartList: ', cartList);
 }
 
 const plusLike = (i) => {

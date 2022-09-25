@@ -189,7 +189,6 @@ const View2 = () => {
     info.map((x, index)=>{
       member_info.map(i => {
       if(info.length - parseInt(id) === index && i.id === x.writer){
-        console.log('view2 image: ', x.image);
         switch(true){
           case i.score < 200 : rank = 1; break;
           case i.score > 500 : rank = 2; break;

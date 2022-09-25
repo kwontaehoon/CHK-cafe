@@ -96,57 +96,60 @@ button{
 
 const P_Pay = (location) => {
 
+  const info = useLocation().state; //카트 정보를 받아옴
 
   const [sum, setSum] = useState(0);
-  const [addList, setAddList] = useState([]);
+  const [addList, setAddList] = useState(info);
   const [number, setNumber] = useState(1);
   const [cost, setCost] = useState([]);
   const [costTest, setCostTest] = useState(Array.from((v, i) => i));
-  const [wishTab, setWishTab] = useState(Array.from({length: 9}, () => 1));
-
-  const info = useLocation().state; //카트 정보를 받아옴
+  const [wishTab, setWishTab] = useState(Array.from({length: info.length}, () => 1));
 
   useEffect(()=>{
-  }, [info]);
-  
+    let arr = [];
+    info.map(x=>{
+      arr.push(x.Price);
+    })
+    setCost(arr);
+  }, [])
 
   const plus = (e, price) => {
+    if(wishTab[e] >= 0){
     let arr = [...wishTab];
     arr[e] = arr[e] +1;
     cost[e] = cost[e] + price;
     setWishTab(arr);
     setSum(sum + price);
-   
+    }
   }
   const minus = (t, price) => {
+    if(wishTab[t] > 1 ){
     let arr = [...wishTab];
     arr[t] = arr[t] -1;
     setWishTab(arr);
     cost[t] = cost[t] - price;
     setSum(sum - price);
-    
+    }
   }
     //버튼 클릭시 아이템 삭제
 
-    const remove = (r,price,index)=>{
-      let arr = [...info];
+    const remove = (r, price, index)=>{
+      let arr = [...addList];
       let arr2 = [...wishTab];
       arr2[r] = price * arr2[r]
       arr.splice(r,1, '');
       setAddList(arr);
       setSum(sum - arr2[r])
-    
     }
  
   
 const PayList = () => {
   let arr = [];
-  info.map((i, index)=>{
+  addList.map((i, index)=>{
     if(i !== ''){
    arr.push(
             <ListBox key={index}>
             <button className='del' onClick={()=>remove(index, i.Price)}  ><i className="fa-solid fa-xmark"/></button>
-            {/* <span style={{display:"none"}}>{dd[i]}</span> */}
             <div className='subListBox'>
             <span className='listTitle'>{i.title}</span>
             <img src={i.url}/>
@@ -156,7 +159,7 @@ const PayList = () => {
             {wishTab[index]}
             <button onClick={()=>minus(index, i.Price)}><i className="fa-solid fa-minus"/></button>
             </span>
-            <span className='listPrice'>금액 : {i.Price} 원</span>
+            <span className='listPrice'>금액 : {cost[index]} 원</span>
             </ListBox>
     )
    }
