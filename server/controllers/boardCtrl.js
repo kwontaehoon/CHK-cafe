@@ -66,6 +66,7 @@ const boardCtrl = {
         const sql = `SELECT * FROM board`;
         connection.query(sql, (error, rows)=>{
             if(error) throw error;
+            console.log('게시판 select문 실행완료')
             res.send(200, {"rows": rows, "length": rows.length});
             // 여러개의 데이터를 뿌려줄 때
         })

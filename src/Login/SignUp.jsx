@@ -94,8 +94,6 @@ const SignUp = () => {
         console.log('SignUp useEffect');
         async function a(){
           const response = await axios.get(`/api/login`);
-          console.log('데이터받아왔니??');
-          console.log(response.data.rows);
           setMember_info(response.data.rows);
         }
         a();
@@ -107,7 +105,9 @@ const SignUp = () => {
     const [asociate_diplay, setAsociate_display] = useState('none'); // 중복 확인되었는지 알림창
     const [daum_display, setDaum_display] = useState(false); // daum 모달 display
     const [daum_address, setDaum_address] = useState('');
+    console.log('주소: ', daum_address);
     const [daum_jibun, setDaum_jibun] = useState('');
+    console.log('지번: ', daum_jibun);
 
     const overlap = () => {
         let count = 0;
@@ -125,7 +125,7 @@ const SignUp = () => {
         let fullAddress = data.address;
         let extraAddress = '';
         let zonecode = data.zonecode;
-        if (data.addressType === 'R') {
+        if (data.userSelectedType === 'R') {
             if (data.bname !== '') {
                 extraAddress += data.bname;
             }
@@ -133,11 +133,17 @@ const SignUp = () => {
                 extraAddress += (extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName);
             }
             fullAddress += (extraAddress !== '' ? ` (${extraAddress})` : '');
-        }
+            console.log('R');
+            setDaum_address(fullAddress);
+            setDaum_jibun(zonecode);
+            setDaum_display(false);
+        }else if(data.userSelectedType === 'J'){
+            console.log('!R');
         //fullAddress -> 전체 주소반환
-        setDaum_address(fullAddress);
+        setDaum_address(data.jibunAddress);
         setDaum_jibun(zonecode);
-        setDaum_display(false);
+        setDaum_display(false); 
+        }
     }
     console.log('daum_display: ', daum_display);
 
