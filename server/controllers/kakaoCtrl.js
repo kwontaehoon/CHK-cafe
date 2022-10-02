@@ -17,7 +17,6 @@ const kakaoCtrl = {
        
         connection.query(sql, (error, rows)=>{
             if(error) throw error;
-            console.log('row: ', rows);
             if(rows.length === 0){
                 sql = `INSERT INTO member(id, password, name, age, address1, address2, address3, score) VALUES("${id}", "${password}", "${name}", ${age}, "${address1}", "${address2}", "${address3}", ${score});`
                 connection.query(sql, (error, rows)=>{
