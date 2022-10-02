@@ -184,6 +184,7 @@ const Board = () => {
   const [rank_display, setRank_display] = useState(false); // 등급 관련 안내 display
   const [notice_info, setNotice_info] = useState([]); // 공지사항 정보
   const [member_info, setMember_info] = useState([]); // 멤버 정보
+  console.log('member_info: ', member_info);
 
   const localstorage = localStorage.getItem('token');
   
