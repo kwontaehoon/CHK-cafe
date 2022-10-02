@@ -52,8 +52,7 @@ const Login = () => {
     const [maintain, setMaintain] = useState(); // 로그인 상태유지 색상
     
     const REST_API_KEY ="1ab930298baa3406dee898231822f512";
-    const REDIRECT_URI = "http://3.36.131.255:3000/kakao/callback";
-    // local로 할때 "http://localhost:3000/kakao/callback"
+    const REDIRECT_URI = "http://3.36.131.255/kakao/callback";
     const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
 
     const color1 = () => {
