@@ -175,6 +175,7 @@ const Board = () => {
   const [info, setInfo] = useState([]); // 게시판 글
   console.log('info: ', info);
   const [info2, setInfo2] = useState([]); // 한 페이지에 글 15개씩(서버에서 필터하지않고 프론트에서 필터)
+  console.log('info2: ', info2);
   const [comment_info, setComment_info] = useState([]);
   const [infolength, setInfolength] = useState(info.length); // 게시판 길이
   const [sort, setSort] = useState(false); // 게시판 정렬
@@ -195,7 +196,6 @@ const Board = () => {
     async function a(){
       const response = await axios.get('/api/board/'+id);
       setInfo(response.data.rows.reverse());
-
       setInfolength(response.data.length);
       number[id-1] = "skyblue";
 
@@ -207,18 +207,15 @@ const Board = () => {
 
     async function b(){
       const response = await axios.get('/api/comment');
-      console.log('댓글 데이터');
       setComment_info(response.data.rows.reverse());
     }
 
     async function c(){
       const response = await axios.get('/api/notice');
-      console.log('공지사항 데이터');
       setNotice_info(response.data.rows);
     }
     async function d(){
       const response = await axios.get('/api/login');
-      console.log('멤버 데이터');
       setMember_info(response.data.rows);
     }
     a();
@@ -350,8 +347,6 @@ const Board = () => {
   }
 
   const number_color = (e) => {
-    console.log('number_color 실행');
-    console.log('id: ', e);
     let arr = [];
     arr[e-1] = "skyblue";
     setNumber(arr);
