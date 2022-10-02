@@ -32,7 +32,6 @@ const Score = styled.div`
   border-radius: 5px;
   margin-right: 3px;
   line-height: 22px;
-  border: 1px solid grey;
 `
 const Write = styled.div`
   flex: 0 0 20%;

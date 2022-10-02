@@ -3,7 +3,6 @@ const axios = require('axios');
 
 const testCtrl = {
     getInfo: async(req, res)=>{
-        console.log('test입니다.');
         const client_id = "1ab930298baa3406dee898231822f512";
 
         async function a(){

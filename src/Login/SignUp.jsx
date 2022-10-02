@@ -105,9 +105,7 @@ const SignUp = () => {
     const [asociate_diplay, setAsociate_display] = useState('none'); // 중복 확인되었는지 알림창
     const [daum_display, setDaum_display] = useState(false); // daum 모달 display
     const [daum_address, setDaum_address] = useState('');
-    console.log('주소: ', daum_address);
     const [daum_jibun, setDaum_jibun] = useState('');
-    console.log('지번: ', daum_jibun);
 
     const overlap = () => {
         let count = 0;
@@ -145,7 +143,6 @@ const SignUp = () => {
         setDaum_display(false); 
         }
     }
-    console.log('daum_display: ', daum_display);
 
     const display2 = () => {
         setDaum_display(!daum_display);

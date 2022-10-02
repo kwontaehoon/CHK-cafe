@@ -4,7 +4,6 @@ const signupCtrl = {
   
     insertInfo: async(req, res)=>{
 
-        console.log('회원가입 실행');
 
         const {id, password, name, age, address1, address2, address3} = req.body; // 구조분해할당
 

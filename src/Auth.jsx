@@ -7,8 +7,6 @@ const Auth = () => {
 
     const code = new URL(window.location.href).searchParams.get("code");
 
-    console.log('code: ', code);
-
     try {
         if (Kakao) {
             Kakao.init('6cc73febe66d6d7f80acd90ecd7d4d85');
@@ -31,11 +29,11 @@ const Auth = () => {
                     localStorage.setItem('profile', profile);
                     localStorage.setItem('code', nickname);
                     localStorage.setItem('token', response.access_token);
-                    alert('카카오 로그인 완료!!');
-                    window.location.href = `/`;
+                    // alert('카카오 로그인 완료!!');   
+                    window.location.href = `/api/kakao?id=${nickname}`;
                 }
             });
-            // window.location.href='/ex/kakao_login.html' //리다이렉트 되는 코드
+            // window.location.href='/api/kakao';
         },
         fail: function(error) {
             console.log(error);

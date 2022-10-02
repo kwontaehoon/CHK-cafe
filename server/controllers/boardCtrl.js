@@ -15,7 +15,7 @@ const boardCtrl = {
             connection.query(sql, (error, rows)=>{
                 if(error) throw error;
                 res.send("<script>alert('수정완료!!'); location.href='/membership/faq/board/1';</script>");
-              })
+            })
         }
 
         else if(req.query.modify === undefined){

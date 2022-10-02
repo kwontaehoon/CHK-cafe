@@ -17,13 +17,14 @@ const kakaoCtrl = {
        
         connection.query(sql, (error, rows)=>{
             if(error) throw error;
+            console.log('row: ', rows);
             if(rows.length === 0){
                 sql = `INSERT INTO member(id, password, name, age, address1, address2, address3, score) VALUES("${id}", "${password}", "${name}", ${age}, "${address1}", "${address2}", "${address3}", ${score});`
                 connection.query(sql, (error, rows)=>{
                     if(error) throw error;
-                    res.send("<script>alert('카카오 회원가입 완료!!'); location.href='/';</script>");
+                    res.send("<script>alert('카카오 회원가입 완료!!!!!!!!!!!'); location.href='/';</script>");
                 })
-            }else res.send("<script>alert('카카오로그인 완료!!'); location.href='/';</script>")
+            }else res.send("<script>alert('카카오 로그인 완료!!!!!!!!!!!'); location.href='/';</script>");
         })
 }
 }
