@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import styled from "styled-components"
 import {Row, Col} from 'reactstrap'
-import { Link, useParams } from 'react-router-dom'
-import cookies from 'react-cookies'
+import { Link, useParams, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import tt  from './base.png'
+import cookies from 'react-cookies'
 
 const Container = styled.div`
   width: 80%;
@@ -157,10 +157,10 @@ const View2 = () => {
   // board_info가 담긴 state 정보는 제목을 클릭해야 넘어오기 때문이다.
 
   const { id } = useParams(); // useParams를 통해 쿼리스트링을 가져온다.
+  const name = useLocation().state.name;
   const writer = localStorage.getItem('code');
 
   useEffect(()=>{
-    console.log('view2 useEffect');
     async function a(){
       const response = await axios.post(`/api/comment/${id}`);
       setComment_info(response.data.rows.reverse());
@@ -177,11 +177,14 @@ const View2 = () => {
     a();
     b();
     c();
+    if(name === cookies.load('key') || localStorage.getItem('code') === name){
+      setRevise('block');
+    }
     }, []);
 
   const [info, setInfo] = useState([]);
   const [comment_info, setComment_info] = useState([]); // 댓글 테이블 정보
-  const [revise, setRevise] = useState('none'); // 수정 | 삭제 유무
+  const [revise, setRevise] = useState('none'); // 수정 | 삭제 display 유무
   const [member_info, setMember_info] = useState([]);
 
   const List = () => {
@@ -214,9 +217,6 @@ const View2 = () => {
         )
       }
     })
-      if(x.writer === cookies.load('key')){;
-        setRevise('block');
-      }
     })
     return arr2;
   }
@@ -262,9 +262,7 @@ const View2 = () => {
     e.target.src = tt;
   }
   const Delete = (e) => {
-    console.log('kwon');
     if(window.confirm('삭제하시겠습니까??') === true){
-      console.log('삭제합니다');
       window.location.href=`/api/board?id=${e}&delete=true`;
     }
   }

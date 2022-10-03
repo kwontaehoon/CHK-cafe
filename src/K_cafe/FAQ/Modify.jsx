@@ -42,17 +42,13 @@ const Modify = () => {
 
   const info = useLocation().state.info;
   const id = useLocation().state.id;
-  console.log('id: ', id);
-  
 
   useEffect(()=>{
-    console.log('modify useEffect');
     const arr = info.filter((x, index) => {
         if(x.id === parseInt(id)){
             return x;
         }
     });
-    console.log('arr: ', arr);
     setModify_info(arr);
   }, []);
 
@@ -93,7 +89,7 @@ const Modify = () => {
 return (
   <Container>
       <Header>글 쓰기</Header>
-      <form action={`/api/board?modify=true&id=24`} method="post" encType='multipart/form-data'>
+      <form action={`/api/board?modify=true&id=${id}`} method="post" encType='multipart/form-data'>
       <Main>
           <List />
           <ImageAdd>

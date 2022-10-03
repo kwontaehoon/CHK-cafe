@@ -172,7 +172,6 @@ const CurrentBox = styled.div`
 const Board = () => {
 
   const [info, setInfo] = useState([]); // 게시판 글
-  console.log('info: ', info);
   const [info2, setInfo2] = useState([]); // 한 페이지에 글 15개씩(서버에서 필터하지않고 프론트에서 필터)
   console.log('info2: ', info2);
   const [comment_info, setComment_info] = useState([]);
@@ -192,7 +191,6 @@ const Board = () => {
 
 
   useEffect(()=>{
-    console.log('useEffect');
     async function a(){
       const response = await axios.get('/api/board/'+id);
       setInfo(response.data.rows.reverse());
@@ -244,7 +242,7 @@ const Board = () => {
       arr.push(
         <Bar key={count}>
           <Number>{i.id}</Number>
-          <Title><Link to={`/membership/faq/view/${i.id}`}>{i.title}</Link></Title>
+          <Title><Link to={`/membership/faq/view/${i.id}`} state={{"name": i.writer}}>{i.title}</Link></Title>
           <Writer><Score>{rank}</Score>{i.writer}</Writer>
           <Date>{i.date}</Date>
         </Bar>
@@ -361,7 +359,6 @@ const Board = () => {
   const search_click = (e) => {
     setSearch(e);
   }
-  console.log('search: ', search);
   
 
   let content3;
