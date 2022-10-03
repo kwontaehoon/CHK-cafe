@@ -173,7 +173,6 @@ const Board = () => {
 
   const [info, setInfo] = useState([]); // 게시판 글
   const [info2, setInfo2] = useState([]); // 한 페이지에 글 15개씩(서버에서 필터하지않고 프론트에서 필터)
-  console.log('info2: ', info2);
   const [comment_info, setComment_info] = useState([]);
   const [infolength, setInfolength] = useState(info.length); // 게시판 길이
   const [sort, setSort] = useState(false); // 게시판 정렬
@@ -182,7 +181,6 @@ const Board = () => {
   const [rank_display, setRank_display] = useState(false); // 등급 관련 안내 display
   const [notice_info, setNotice_info] = useState([]); // 공지사항 정보
   const [member_info, setMember_info] = useState([]); // 멤버 정보
-  console.log('member_info: ', member_info);
 
   const localstorage = localStorage.getItem('token');
   
@@ -199,8 +197,6 @@ const Board = () => {
 
       let currentPage = 15;
       setInfo2(response.data.rows.slice(parseInt(id)*currentPage - currentPage, currentPage*parseInt(id)));
-    
-      // console.log('aaa: ', cookies.load('loginId'));
     }
 
     async function b(){

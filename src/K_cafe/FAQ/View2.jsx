@@ -157,8 +157,7 @@ const View2 = () => {
   // board_info가 담긴 state 정보는 제목을 클릭해야 넘어오기 때문이다.
 
   const { id } = useParams(); // useParams를 통해 쿼리스트링을 가져온다.
-  const name = useLocation().state.name;
-  const writer = localStorage.getItem('code');
+  const name = useLocation().state;
 
   useEffect(()=>{
     async function a(){
@@ -177,15 +176,24 @@ const View2 = () => {
     a();
     b();
     c();
-    if(name === cookies.load('key') || localStorage.getItem('code') === name){
+    if(cookies.load('key') !== undefined){
+      setWriter(cookies.load('key'));
+    }else if(localStorage.getItem('code') !== undefined){
+      setWriter(localStorage.getItem('code'));
+    }
+
+    if(name !== null){
+    if(name.name === cookies.load('key') || localStorage.getItem('code') === name.name){
       setRevise('block');
     }
+  }
     }, []);
 
   const [info, setInfo] = useState([]);
   const [comment_info, setComment_info] = useState([]); // 댓글 테이블 정보
   const [revise, setRevise] = useState('none'); // 수정 | 삭제 display 유무
   const [member_info, setMember_info] = useState([]);
+  const [writer, setWriter] = useState();
 
   const List = () => {
     const arr2 = [];

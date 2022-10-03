@@ -47,10 +47,10 @@ const boardCtrl = {
         }
     },
     getInfo: async(req, res)=>{
-        console.log('board 입니다.');
         if(req.query.delete !== undefined){ // 삭제 눌렀을 때
             const id = req.query.id;
             const sql = `DELETE FROM board WHERE id = ${id};`+
+            `DELETE FROM comment WHERE board_number = ${id};`+
             `ALTER TABLE board AUTO_INCREMENT=1;`+
             `SET @COUNT = 0; `+
             `UPDATE board SET id = @COUNT:=@COUNT+1;`;
@@ -66,7 +66,6 @@ const boardCtrl = {
         const sql = `SELECT * FROM board`;
         connection.query(sql, (error, rows)=>{
             if(error) throw error;
-            console.log('게시판 select문 실행완료')
             res.send(200, {"rows": rows, "length": rows.length});
             // 여러개의 데이터를 뿌려줄 때
         })
