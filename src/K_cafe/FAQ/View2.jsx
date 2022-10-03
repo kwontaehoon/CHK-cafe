@@ -157,6 +157,7 @@ const View2 = () => {
   // board_info가 담긴 state 정보는 제목을 클릭해야 넘어오기 때문이다.
 
   const { id } = useParams(); // useParams를 통해 쿼리스트링을 가져온다.
+  const writer = localStorage.getItem('code');
 
   useEffect(()=>{
     console.log('view2 useEffect');
@@ -290,7 +291,7 @@ const View2 = () => {
               <List />
               <Comment_Box>
                 <Comment_Top>댓글 {comment_info.length}</Comment_Top>
-                <form style={{marginTop: "20px"}} action={`/api/comment?id=${id}`} method='post'>
+                <form style={{marginTop: "20px"}} action={`/api/comment?id=${id}&writer=${writer}`} method='post'>
                   <input type="text" name="content" style={{width: "87%", height: "100px"}}></input>
                   <input type="submit" value="등록" style={{width: "13%", height: "100px"}}></input>
                 </form>
