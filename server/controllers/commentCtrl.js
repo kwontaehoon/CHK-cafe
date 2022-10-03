@@ -19,7 +19,7 @@ const commentCtrl = {
         const {content} = req.body; // 구조분해할당
 
         switch(true){
-            case writer === undefined : res.send("<script>alert('로그인부터 하시죠??'); location.href='/login';</script>"); break;
+            case writer === 'null' : res.send("<script>alert('로그인부터 하시죠??'); location.href='/login';</script>"); break;
             case content === '' : res.send(`<script>alert('내용을 입력해주세요'); location.href='/membership/faq/view/${id}';</script>`); break;
             case writer !== undefined && content !== '' :
         
