@@ -15,7 +15,9 @@ const commentCtrl = {
         // 여기는 쿼리스트링으로 parans가 없을 때 실행
         
         const id = req.query.id;
+        console.log('id: ', id);
         const writer = req.cookies.key;
+        console.log('writer: ', writer);
         const {content} = req.body; // 구조분해할당
 
         switch(true){
