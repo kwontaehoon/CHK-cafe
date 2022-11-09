@@ -6,7 +6,8 @@ import axios from 'axios'
 const Auth2 = () => {
 
     const REST_API_KEY ="1ab930298baa3406dee898231822f512";
-    const REDIRECT_URI = "http://3.36.131.255";
+    const REDIRECT_URI = "http://3.36.98.240";
+    // "http:/loaclhost:3000"
     const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
     const REACT_APP_KAKAO_CLIENT_SECRET = "S20zCpXbh8zpkAq1eg6OTBKVlC7ubEoP";
 
