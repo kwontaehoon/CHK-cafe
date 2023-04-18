@@ -17,6 +17,7 @@
     "express": "^4.18.1",
     "fs": "^0.0.1-security",
     "http-proxy-middleware": "^2.0.6",
+    "jest": "^27.5.1",
     "jquery": "^3.6.0",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
@@ -49,7 +50,7 @@
     "client": "react-scripts start",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

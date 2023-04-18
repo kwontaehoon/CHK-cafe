@@ -78,3 +78,11 @@ app.use('/api/comment', require('./routes/commentRouter'));
 app.use('/api/notice', require('./routes/noticeRouter'));
 app.use('/api/kakao', require('./routes/kakaoRouter'));
 app.use('/api/kakao2', require('./routes/kakao2Router'));
+
+app.get('/test', (req, res)=> {
+    console.log('tt 입니다.');
+        const id = req.body.id;
+        const password = req.body.password;
+
+        res.send('Hello Axios');
+})

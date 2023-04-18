@@ -27,6 +27,7 @@ import SignUp from './Login/SignUp'
 import P_Pay from './Product/P_Pay'
 import './app.css'
 import Auth from './Auth'
+import Auth3 from './Auth3'
 
 const App = () => {
   
@@ -36,6 +37,7 @@ const App = () => {
       <Topnav />
       <Routes>
         <Route path='/' element = {<Main />} />
+        <Route path='/auth/naver/callback' element= {<Auth3/>} ></Route>
         <Route path='/kakao/callback' element = {<Auth />} />
         <Route path='/coffee' element= {<Coffee/>}/>
         <Route path='/noncoffee' element={<Tea/>} />

@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { naver } from './Naver'
 
 const Container = styled.div`
 `
@@ -71,6 +72,7 @@ const Login = () => {
                     <Login2><input type="submit" value="로그인" style={{backgroundColor: "yellow", width: "100%", height: "100%", cursor: "pointer",  borderRadius: "10px"}}></input></Login2>
                     <Kakao href={KAKAO_AUTH_URL}><img src='/image/K_image/kakao_login.jpg' width="313px"></img></Kakao>
                 </Result>
+                <div onClick={naver}>네이버 로그인</div>
                 <SignUp><Link to={"/signup"}><button>회원가입</button></Link></SignUp>
                 </form>
             </Box2>
